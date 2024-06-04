@@ -6,7 +6,15 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:42:06 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/04 16:42:07 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:59:07 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#if !defined(PUSH_SWAP_H)
+# define PUSH_SWAP_H
+
+# include <unistd.h>
+
+
+
+#endif
