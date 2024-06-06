@@ -6,11 +6,11 @@
 #    By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 16:42:03 by paprzyby          #+#    #+#              #
-#    Updated: 2024/06/04 16:57:53 by paprzyby         ###   ########.fr        #
+#    Updated: 2024/06/06 14:03:24 by paprzyby         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=
+NAME		=	push_swap
 
 SOURCE		=	push_swap.c
 
@@ -24,7 +24,7 @@ FLAGS		=	-Wall -Wextra -Werror
 
 all:			$(SOURCE)
 
-$(NAME):		all
+$(NAME):		$(OBJS)
 
 %.o:			%.c push_swap.h
 				$(CC) $(FLAGS) -c $< -o $@
