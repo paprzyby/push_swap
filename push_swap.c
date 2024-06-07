@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/07 16:22:10 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/07 17:23:53 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		return (1);
 	if (argc == 2)
-		ft_split(argv[1], ' ');
+		argv = ft_split(argv[1], ' ');
+	check_for_error(argv + 1);
 	return (0);
 }

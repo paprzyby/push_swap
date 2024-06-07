@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:42:06 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/07 16:29:01 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/07 17:24:20 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdio.h>
+# include <limits.h>
 # include "libft/libft.h"
 
 typedef struct s_list
@@ -25,6 +27,7 @@ typedef struct s_list
 	struct s_list	*prev;
 }					t_list;
 
-
+void	check_for_error(char **argv);
+long	ft_atol(char *str);
 
 #endif
