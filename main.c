@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   swap_a.c                                           :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/06 15:54:19 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/06 17:56:42 by paprzyby         ###   ########.fr       */
+/*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
+/*   Updated: 2024/06/07 16:22:10 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap_a(t_list **lst, t_list *current)
+int	main(int argc, char **argv)
 {
-	current = &lst;
-	if (current != NULL)
-	{
-		
-	}
+	t_list	*a;
+	t_list	*b;
+
+	a = NULL;
+	b = NULL;
+	if (argc == 1)
+		return (1);
+	if (argc == 2)
+		ft_split(argv[1], ' ');
+	return (0);
 }
