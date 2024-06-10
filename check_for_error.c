@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/07 17:24:32 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/10 13:21:07 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,17 @@ long	ft_atol(char *str)
 	return (number * symbol);
 }
 
-void	check_for_error(char **argv)
+void	error_free(t_list **a, long num)
+{
+
+}
+
+int	check_for_repeat(t_list **a, int num)
+{
+
+}
+
+void	stack_innit(t_list **a, char **argv)
 {
 	long	num;
 
@@ -40,8 +50,10 @@ void	check_for_error(char **argv)
 	{
 		num = ft_atol(*argv);
 		if (num > INT_MAX || num < INT_MIN)
-		{
-
-		}
+			error_free(a, argv);
+		if (check_for_repeat(*a, (int)num))
+			error_free(a, argv);
+		argv++;
 	}
+	return (0);
 }
