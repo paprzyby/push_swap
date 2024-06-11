@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/11 11:00:20 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/11 13:20:41 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,37 @@ long	ft_atol(char *str)
 	return (number * symbol);
 }
 
-void	error_free(t_list **a, long num)
+void	error_free(t_list **stack, long num)
 {
-
+	free(*stack);
 }
 
-int	check_for_repeat(t_list *a, int num)
+int	check_for_repeat(t_list *stack, int num)
 {
-	if (!a)
+	if (!stack)
 		return (0);
-	while (a)
+	while (stack)
 	{
-		if (a->value == num)
+		if (stack->value == num)
 			return (1);
-		a = a->next;
+		stack = stack->next;
 	}
 	return (0);
+}
+
+t_list	*find_last_node(t_list *stack)
+{
+	if (!stack)
+		return;
+	while (stack->next)
+		stack = stack->next;
+	return (stack);
 }
 
 void	create_node(t_list **stack, int num)
 {
 	t_list	*node;
+	t_list	*last_node;
 
 	if (!stack)
 		return ;
@@ -68,11 +78,13 @@ void	create_node(t_list **stack, int num)
 	}
 	else
 	{
-
+		last_node = find_last_node(*stack);
+		last_node->next = node;
+		node->prev = last_node;
 	}
 }
 
-void	stack_init(t_list **a, char **argv)
+void	stack_init(t_list **stack, char **argv)
 {
 	long	num;
 
@@ -80,10 +92,10 @@ void	stack_init(t_list **a, char **argv)
 	{
 		num = ft_atol(*argv);
 		if (num > INT_MAX || num < INT_MIN)
-			error_free(a, argv);
-		if (check_for_repeat(*a, (int)num))
-			error_free(a, argv);
-		create_node(a, (int)num);
+			error_free(stack, argv);
+		if (check_for_repeat(*stack, (int)num))
+			error_free(stack, argv);
+		create_node(stack, (int)num);
 		argv++;
 	}
 }
