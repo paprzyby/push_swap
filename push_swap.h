@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:42:06 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/11 13:32:36 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/11 14:31:37 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,20 +19,20 @@
 # include <limits.h>
 # include "libft/libft.h"
 
-typedef struct s_list
+typedef struct s_lst
 {
 	int				num;
 	int				value;
-	struct s_list	*current;
-	struct s_list	*next;
-	struct s_list	*prev;
-}					t_list;
+	struct s_lst	*current;
+	struct s_lst	*next;
+	struct s_lst	*prev;
+}					t_lst;
 
-void	stack_init(t_list **a, char **argv);
+void	stack_init(t_lst **a, char **argv);
 long	ft_atol(char *str);
-void	error_free(t_list **stack, char argv);
-int		check_for_repeat(t_list *stack, int num);
-void	create_node(t_list **stack, int num);
-t_list	*find_last_node(t_list *stack);
+void	error_free(t_lst **stack, char argv);
+int		check_for_repeat(t_lst *stack, int num);
+void	create_node(t_lst **stack, int num);
+t_lst	*find_last_node(t_lst *stack);
 
 #endif

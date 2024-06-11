@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/11 13:32:16 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/11 14:31:57 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ long	ft_atol(char *str)
 	return (number * symbol);
 }
 
-void	error_free(t_list **stack, char argv)
+void	error_free(t_lst **stack, char argv)
 {
 	free(*stack);
 }
 
-int	check_for_repeat(t_list *stack, int num)
+int	check_for_repeat(t_lst *stack, int num)
 {
 	if (!stack)
 		return (0);
@@ -50,7 +50,7 @@ int	check_for_repeat(t_list *stack, int num)
 	return (0);
 }
 
-t_list	*find_last_node(t_list *stack)
+t_lst	*find_last_node(t_lst *stack)
 {
 	if (!stack)
 		return;
@@ -59,14 +59,14 @@ t_list	*find_last_node(t_list *stack)
 	return (stack);
 }
 
-void	create_node(t_list **stack, int num)
+void	create_node(t_lst **stack, int num)
 {
-	t_list	*node;
-	t_list	*last_node;
+	t_lst	*node;
+	t_lst	*last_node;
 
 	if (!stack)
 		return ;
-	node = malloc(sizeof(t_list));
+	node = malloc(sizeof(t_lst));
 	if (!node)
 		return ;
 	node->value = num;
@@ -84,7 +84,7 @@ void	create_node(t_list **stack, int num)
 	}
 }
 
-void	stack_init(t_list **stack, char **argv)
+void	stack_init(t_lst **stack, char **argv)
 {
 	long	num;
 
@@ -102,4 +102,4 @@ void	stack_init(t_list **stack, char **argv)
 
 //allocated memory:
 //- ft_split (**argv)
-//- t_list **a(nodes)
+//- t_lst **a(nodes)
