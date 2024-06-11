@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/11 09:34:52 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/11 10:08:34 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	create_node(t_list **stack, int num)
 	}
 	else
 	{
-		
+
 	}
 }
 
@@ -87,3 +87,7 @@ void	stack_innit(t_list **a, char **argv)
 		argv++;
 	}
 }
+
+//allocated memory:
+//- ft_split (**argv)
+//- t_list **a(nodes)
