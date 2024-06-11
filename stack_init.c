@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/11 13:20:41 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/11 13:32:16 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ long	ft_atol(char *str)
 	return (number * symbol);
 }
 
-void	error_free(t_list **stack, long num)
+void	error_free(t_list **stack, char argv)
 {
 	free(*stack);
 }

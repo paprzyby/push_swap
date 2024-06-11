@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/11 09:14:48 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/11 13:26:17 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,10 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 		argv = ft_split(argv[1], ' ');
 	stack_init(&a, argv + 1);
+	while (a)
+	{
+		printf("%d node\n", a->value);
+		a = a->next;
+	}
 	return (0);
 }
