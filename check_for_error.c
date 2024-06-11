@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/10 13:21:07 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/11 09:12:19 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,27 @@ long	ft_atol(char *str)
 	return (number * symbol);
 }
 
+void	create_stack(t_list **stack, int num)
+{
+
+}
+
 void	error_free(t_list **a, long num)
 {
 
 }
 
-int	check_for_repeat(t_list **a, int num)
+int	check_for_repeat(t_list *a, int num)
 {
-
+	if (!a)
+		return (0);
+	while (a)
+	{
+		if (a->value == num)
+			return (1);
+		a = a->next;
+	}
+	return (0);
 }
 
 void	stack_innit(t_list **a, char **argv)
@@ -53,7 +66,7 @@ void	stack_innit(t_list **a, char **argv)
 			error_free(a, argv);
 		if (check_for_repeat(*a, (int)num))
 			error_free(a, argv);
+		create_stack(a, (int)num);
 		argv++;
 	}
-	return (0);
 }
