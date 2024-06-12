@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 13:48:11 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:07:07 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,28 +100,8 @@ void	stack_init(t_list **stack, char **argv)
 //- ft_split (**argv)
 //- t_list **a(nodes)
 
-//void	error_handle(t_list **stack, char *argv)
-//{
-//	free(*stack);
-//	free(argv);
-//	write(1, "Error\n", 6);
-//}
-
-//t_list	*find_last_node(t_list *stack)
-//{
-//	if (!stack)
-//		return;
-//	while (stack->next)
-//		stack = stack->next;
-//	return (stack);
-//}
-
+//to do:
 //memory for the list is not
-//properly free!!!
-
-//void	error_handle(t_list **stack)
-//{
-//	free(*stack);
-//	*stack = NULL;
-//	write(1, "Error\n", 6);
-//}
+//properly freed (whats inside the node)!!!
+//replace some returns with exit
+//free everything if an error appeard
