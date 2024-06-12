@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:42:06 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 09:40:41 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/12 10:15:26 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include <stdio.h>
 # include <limits.h>
-# include "libft/libft.h"
 
 typedef struct s_lst
 {
@@ -34,7 +33,6 @@ void	error_handle(t_lst **stack);
 int		check_for_repeat(t_lst *stack, int num);
 void	create_node(t_lst **stack, int num);
 t_lst	*find_last_node(t_lst *stack);
-
 char	**ft_split(char const *s, char c);
 
 #endif
