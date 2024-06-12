@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 09:41:51 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/12 10:30:03 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ long	ft_atol(char *str)
 void	error_handle(t_lst **stack)
 {
 	free(*stack);
+	*stack = NULL;
 	write(1, "Error\n", 6);
 }
 
@@ -124,3 +125,6 @@ void	stack_init(t_lst **stack, char **argv)
 //		stack = stack->next;
 //	return (stack);
 //}
+
+//memory for the list is not
+//properly free!!!
