@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 10:35:28 by paprzyby         ###   ########.fr       */
+/*   Created: 2024/03/18 09:09:55 by paprzyby          #+#    #+#             */
+/*   Updated: 2024/06/12 11:00:44 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*a;
-	t_list	*b;
+	t_list	*temp;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1)
-		return (1);
-	else if (argc == 2)
+	if (!lst || !del)
+		return ;
+	while (*lst)
 	{
-		argv = ft_split(argv[1], ' ');
-		stack_init(&a, argv);
+		temp = (*lst)-> next;
+		ft_lstdelone(*lst, del);
+		*lst = temp;
 	}
-	else
-		stack_init(&a, argv + 1);
-	while (a)
-	{
-		printf("%d. node\n", a->value);
-		a = a->next;
-	}
-	return (0);
 }

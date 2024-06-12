@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:42:06 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 10:15:26 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/12 10:54:05 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,24 @@
 # include <stdio.h>
 # include <limits.h>
 
-typedef struct s_lst
+typedef struct s_list
 {
 	int				num;
 	int				value;
-	struct s_lst	*current;
-	struct s_lst	*next;
-	struct s_lst	*prev;
-}					t_lst;
+	struct s_list	*current;
+	struct s_list	*next;
+	struct s_list	*prev;
+}					t_list;
 
-void	stack_init(t_lst **a, char **argv);
+void	stack_init(t_list **a, char **argv);
 long	ft_atol(char *str);
-void	error_handle(t_lst **stack);
-int		check_for_repeat(t_lst *stack, int num);
-void	create_node(t_lst **stack, int num);
-t_lst	*find_last_node(t_lst *stack);
+void	error_handle(t_list **stack);
+int		check_for_repeat(t_list *stack, int num);
+void	create_node(t_list **stack, int num);
+t_list	*find_last_node(t_list *stack);
+
 char	**ft_split(char const *s, char c);
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
 #endif

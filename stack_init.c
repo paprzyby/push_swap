@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 10:30:03 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/12 11:00:45 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,7 @@ long	ft_atol(char *str)
 	return (number * symbol);
 }
 
-void	error_handle(t_lst **stack)
-{
-	free(*stack);
-	*stack = NULL;
-	write(1, "Error\n", 6);
-}
-
-int	check_for_repeat(t_lst *stack, int num)
+int	check_for_repeat(t_list *stack, int num)
 {
 	if (!stack)
 		return (0);
@@ -52,21 +45,21 @@ int	check_for_repeat(t_lst *stack, int num)
 	return (0);
 }
 
-t_lst	*find_last_node(t_lst *stack)
+t_list	*find_last_node(t_list *stack)
 {
 	while (stack->next)
 		stack = stack->next;
 	return (stack);
 }
 
-void	create_node(t_lst **stack, int num)
+void	create_node(t_list **stack, int num)
 {
-	t_lst	*node;
-	t_lst	*last_node;
+	t_list	*node;
+	t_list	*last_node;
 
 	if (!stack)
 		return ;
-	node = malloc(sizeof(t_lst));
+	node = malloc(sizeof(t_list));
 	if (!node)
 		return ;
 	node->value = num;
@@ -84,7 +77,7 @@ void	create_node(t_lst **stack, int num)
 	}
 }
 
-void	stack_init(t_lst **stack, char **argv)
+void	stack_init(t_list **stack, char **argv)
 {
 	long	num;
 
@@ -93,12 +86,14 @@ void	stack_init(t_lst **stack, char **argv)
 		num = ft_atol(*argv);
 		if (num > INT_MAX || num < INT_MIN)
 		{
-			error_handle(stack);
+			ft_lstclear(stack, free);
+			write(1, "Error\n", 6);
 			return ;
 		}
 		if (check_for_repeat(*stack, (int)num))
 		{
-			error_handle(stack);
+			ft_lstclear(stack, free);
+			write(1, "Error\n", 6);
 			return ;
 		}
 		create_node(stack, (int)num);
@@ -108,16 +103,16 @@ void	stack_init(t_lst **stack, char **argv)
 
 //allocated memory:
 //- ft_split (**argv)
-//- t_lst **a(nodes)
+//- t_list **a(nodes)
 
-//void	error_handle(t_lst **stack, char *argv)
+//void	error_handle(t_list **stack, char *argv)
 //{
 //	free(*stack);
 //	free(argv);
 //	write(1, "Error\n", 6);
 //}
 
-//t_lst	*find_last_node(t_lst *stack)
+//t_list	*find_last_node(t_list *stack)
 //{
 //	if (!stack)
 //		return;
@@ -128,3 +123,10 @@ void	stack_init(t_lst **stack, char **argv)
 
 //memory for the list is not
 //properly free!!!
+
+//void	error_handle(t_list **stack)
+//{
+//	free(*stack);
+//	*stack = NULL;
+//	write(1, "Error\n", 6);
+//}
