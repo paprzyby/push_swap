@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:42:06 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 09:26:49 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/12 09:40:41 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_lst
 
 void	stack_init(t_lst **a, char **argv);
 long	ft_atol(char *str);
-void	error_free(t_lst **stack);
+void	error_handle(t_lst **stack);
 int		check_for_repeat(t_lst *stack, int num);
 void	create_node(t_lst **stack, int num);
 t_lst	*find_last_node(t_lst *stack);
