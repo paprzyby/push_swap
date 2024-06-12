@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:42:06 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 13:01:05 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:16:07 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ t_list	*find_last_node(t_list *stack);
 
 char	**ft_split(char const *s, char c);
 void	ft_lstclear(t_list **lst);
+t_list	*ft_lstlast(t_list *lst);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 12:53:57 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:16:18 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,6 @@ int	check_for_repeat(t_list *stack, int num)
 	return (0);
 }
 
-t_list	*find_last_node(t_list *stack)
-{
-	while (stack->next)
-		stack = stack->next;
-	return (stack);
-}
-
 void	create_node(t_list **stack, int num)
 {
 	t_list	*node;
@@ -71,7 +64,7 @@ void	create_node(t_list **stack, int num)
 	}
 	else
 	{
-		last_node = find_last_node(*stack);
+		last_node = ft_lstlast(*stack);
 		last_node->next = node;
 		node->prev = last_node;
 	}
