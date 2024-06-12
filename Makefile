@@ -6,13 +6,13 @@
 #    By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 16:42:03 by paprzyby          #+#    #+#              #
-#    Updated: 2024/06/11 14:20:02 by paprzyby         ###   ########.fr        #
+#    Updated: 2024/06/12 09:19:48 by paprzyby         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	push_swap
 
-SOURCE		=	push_swap.c stack_init.c
+SOURCE		=	push_swap.c stack_init.c ft_split.c
 
 OBJECTS		=	$(SOURCE:.c=.o)
 
@@ -24,16 +24,16 @@ FLAGS		=	-Wall -Wextra -Werror
 
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
+$(NAME):		$(OBJECTS)
 
 %.o:			%.c push_swap.h
 				$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-				$(RM) $(NAME)
+	@rm -f $(OBJECTS)
 
-fclean:			clean
-				$(RM) $(NAME) $(OBJECTS)
+fclean:	clean
+	@rm -f $(NAME)
 
 re:				fclean all
 

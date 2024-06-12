@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/11 14:31:57 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/12 09:28:13 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ long	ft_atol(char *str)
 	return (number * symbol);
 }
 
-void	error_free(t_lst **stack, char argv)
+void	error_free(t_lst **stack)
 {
 	free(*stack);
 }
@@ -52,8 +52,6 @@ int	check_for_repeat(t_lst *stack, int num)
 
 t_lst	*find_last_node(t_lst *stack)
 {
-	if (!stack)
-		return;
 	while (stack->next)
 		stack = stack->next;
 	return (stack);
@@ -92,9 +90,9 @@ void	stack_init(t_lst **stack, char **argv)
 	{
 		num = ft_atol(*argv);
 		if (num > INT_MAX || num < INT_MIN)
-			error_free(stack, argv);
+			error_free(stack);
 		if (check_for_repeat(*stack, (int)num))
-			error_free(stack, argv);
+			error_free(stack);
 		create_node(stack, (int)num);
 		argv++;
 	}
@@ -103,3 +101,16 @@ void	stack_init(t_lst **stack, char **argv)
 //allocated memory:
 //- ft_split (**argv)
 //- t_lst **a(nodes)
+//void	error_free(t_lst **stack, char *argv)
+//{
+//	free(*stack);
+//	free(argv);
+//}
+//t_lst	*find_last_node(t_lst *stack)
+//{
+//	if (!stack)
+//		return;
+//	while (stack->next)
+//		stack = stack->next;
+//	return (stack);
+//}

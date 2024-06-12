@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/11 14:31:56 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/12 09:31:00 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	stack_init(&a, argv + 1);
 	while (a)
 	{
-		printf("%d node\n", a->value);
+		printf("%d. node\n", a->value);
 		a = a->next;
 	}
 	return (0);
