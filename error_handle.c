@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   error_handle.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 09:09:55 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 13:06:26 by paprzyby         ###   ########.fr       */
+/*   Created: 2024/06/12 14:32:11 by paprzyby          #+#    #+#             */
+/*   Updated: 2024/06/12 14:38:09 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,11 @@ void	ft_lstclear(t_list **stack)
 		*stack = current;
 	}
 	*stack = NULL;
+}
+
+int	error_handle(t_list **stack)
+{
+	ft_lstclear(stack);
+	write(1, "Error\n", 6);
+	exit(1);
 }

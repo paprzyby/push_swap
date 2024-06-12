@@ -6,13 +6,13 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 14:07:07 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:41:31 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-long	ft_atol(char *str)
+long	ft_atol(char *str, t_list **stack)
 {
 	int		symbol;
 	long	number;
@@ -20,7 +20,7 @@ long	ft_atol(char *str)
 	symbol = 1;
 	number = 0;
 	if (*str != '-' && (*str < '0' || *str > '9'))
-		exit(1);
+		error_handle(stack);
 	if (*str == '-')
 	{
 		symbol = symbol * -1;
@@ -56,7 +56,7 @@ void	create_node(t_list **stack, int num)
 		return ;
 	node = malloc(sizeof(t_list));
 	if (!node)
-		return ;
+		error_handle(stack);
 	node->value = num;
 	node->next = NULL;
 	if (!*stack)
@@ -78,19 +78,11 @@ void	stack_init(t_list **stack, char **argv)
 
 	while (*argv)
 	{
-		num = ft_atol(*argv);
+		num = ft_atol(*argv, stack);
 		if (num > INT_MAX || num < INT_MIN)
-		{
-			ft_lstclear(stack);
-			write(1, "Error\n", 6);
-			return ;
-		}
+			error_handle(stack);
 		if (check_for_repeat(*stack, (int)num))
-		{
-			ft_lstclear(stack);
-			write(1, "Error\n", 6);
-			return ;
-		}
+			error_handle(stack);
 		create_node(stack, (int)num);
 		argv++;
 	}
