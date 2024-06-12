@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 11:00:45 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/12 12:53:57 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,13 +86,13 @@ void	stack_init(t_list **stack, char **argv)
 		num = ft_atol(*argv);
 		if (num > INT_MAX || num < INT_MIN)
 		{
-			ft_lstclear(stack, free);
+			ft_lstclear(stack);
 			write(1, "Error\n", 6);
 			return ;
 		}
 		if (check_for_repeat(*stack, (int)num))
 		{
-			ft_lstclear(stack, free);
+			ft_lstclear(stack);
 			write(1, "Error\n", 6);
 			return ;
 		}

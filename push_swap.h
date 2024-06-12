@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:42:06 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 10:54:05 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:01:05 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ typedef struct s_list
 {
 	int				num;
 	int				value;
-	struct s_list	*current;
 	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
@@ -35,7 +34,6 @@ void	create_node(t_list **stack, int num);
 t_list	*find_last_node(t_list *stack);
 
 char	**ft_split(char const *s, char c);
-void	ft_lstclear(t_list **lst, void (*del)(void *));
-void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst);
 
 #endif
