@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 13:33:18 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:48:11 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ long	ft_atol(char *str)
 
 	symbol = 1;
 	number = 0;
+	if (*str != '-' && (*str < '0' || *str > '9'))
+		exit(1);
 	if (*str == '-')
 	{
 		symbol = symbol * -1;
