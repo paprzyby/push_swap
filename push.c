@@ -6,13 +6,13 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 11:36:02 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/13 12:06:18 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/13 12:12:30 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	push(t_list **a, t_list **b)
+void	push(t_list **a, t_list **b)
 {
 	t_list	*node_to_push;
 

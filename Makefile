@@ -6,14 +6,14 @@
 #    By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 16:42:03 by paprzyby          #+#    #+#              #
-#    Updated: 2024/06/12 14:39:18 by paprzyby         ###   ########.fr        #
+#    Updated: 2024/06/13 12:08:13 by paprzyby         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	push_swap
 
 SOURCE		=	push_swap.c stack_init.c error_handle.c \
-				ft_lstlast.c ft_split.c
+				ft_lstlast.c ft_split.c push.c
 
 OBJECTS		=	$(SOURCE:.c=.o)
 
