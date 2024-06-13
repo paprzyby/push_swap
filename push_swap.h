@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:42:06 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 14:41:45 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/13 11:48:05 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ long	ft_atol(char *str, t_list **stack);
 int		check_for_repeat(t_list *stack, int num);
 void	create_node(t_list **stack, int num);
 t_list	*find_last_node(t_list *stack);
-
-char	**ft_split(char const *s, char c);
-void	ft_lstclear(t_list **lst);
-t_list	*ft_lstlast(t_list *lst);
 int		error_handle(t_list **stack);
+
+char		**ft_split(char const *s, char c);
+void		ft_lstclear(t_list **lst);
+t_list		*ft_lstlast(t_list *lst);
+static void	push(t_list **a, t_list **b);
 
 #endif

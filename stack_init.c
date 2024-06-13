@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 14:41:31 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/13 11:35:54 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,26 +49,26 @@ int	check_for_repeat(t_list *stack, int num)
 
 void	create_node(t_list **stack, int num)
 {
-	t_list	*node;
+	t_list	*new_node;
 	t_list	*last_node;
 
 	if (!stack)
 		return ;
-	node = malloc(sizeof(t_list));
-	if (!node)
+	new_node = malloc(sizeof(t_list));
+	if (!new_node)
 		error_handle(stack);
-	node->value = num;
-	node->next = NULL;
+	new_node->value = num;
+	new_node->next = NULL;
 	if (!*stack)
 	{
-		*stack = node;
-		node->prev = NULL;
+		*stack = new_node;
+		new_node->prev = NULL;
 	}
 	else
 	{
 		last_node = ft_lstlast(*stack);
-		last_node->next = node;
-		node->prev = last_node;
+		last_node->next = new_node;
+		new_node->prev = last_node;
 	}
 }
 
