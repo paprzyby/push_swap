@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.h                                       :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 09:47:15 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/17 11:23:38 by paprzyby         ###   ########.fr       */
+/*   Created: 2024/06/17 11:20:59 by paprzyby          #+#    #+#             */
+/*   Updated: 2024/06/17 11:30:35 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined(OPERATIONS_H)
-# define OPERATIONS_H
+#include "operations.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "../utils/utils.h"
-
-void	push(t_list **a, t_list **b);
-void	rotate(t_list **a);
 void	swap(t_list **a)
-
-#endif
+{
+	if (!*a)
+		return ;
+	*a = (*a)->next;
+}

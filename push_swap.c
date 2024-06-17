@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/17 10:06:58 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/17 11:24:02 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 	}
 	else
 		stack_init(&a, argv + 1);
-	rotate(&a);
+	swap(&a);
 	printf("Stack 'a':\n");
 	while (a)
 	{
