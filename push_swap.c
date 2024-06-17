@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/17 11:24:02 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/17 12:10:01 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	main(int argc, char **argv)
 {
-	t_list			*a;
-	t_list			*b;
+	t_list	*a;
+	t_list	*b;
 
 	a = NULL;
 	b = NULL;

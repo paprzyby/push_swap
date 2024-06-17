@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 14:32:11 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/17 09:51:20 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/17 12:11:19 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	ft_lstclear(t_list **stack)
 {
-	t_list	*current;
+	t_list	*tmp;
 
 	if (!stack)
 		return ;
 	while (*stack)
 	{
-		current = (*stack)->next;
+		tmp = (*stack)->next;
 		free(*stack);
-		*stack = current;
+		*stack = tmp;
 	}
 	*stack = NULL;
 }

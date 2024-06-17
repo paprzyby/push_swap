@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:47:15 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/17 11:23:38 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/17 11:33:22 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@
 
 void	push(t_list **a, t_list **b);
 void	rotate(t_list **a);
-void	swap(t_list **a)
+void	swap(t_list **a);
 
 #endif
