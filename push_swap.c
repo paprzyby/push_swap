@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/17 13:39:22 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/17 14:09:01 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ int	main(int argc, char **argv)
 	}
 	else
 		stack_init(&a, argv + 1);
-	rev_rotate(&a);
+	if (argv <= 3)
+		small_sort(&a);
+	//rev_rotate(&a);
 	printf("Stack 'a':\n");
 	while (a)
 	{
