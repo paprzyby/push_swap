@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_handle.c                                     :+:      :+:    :+:   */
+/*   operations.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/12 14:32:11 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 14:38:09 by paprzyby         ###   ########.fr       */
+/*   Created: 2024/06/17 09:47:15 by paprzyby          #+#    #+#             */
+/*   Updated: 2024/06/17 09:50:52 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#if !defined(OPERATIONS_H)
+# define OPERATIONS_H
 
-void	ft_lstclear(t_list **stack)
-{
-	t_list	*current;
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
+# include "../utils/utils.h"
 
-	if (!stack)
-		return ;
-	while (*stack)
-	{
-		current = (*stack)->next;
-		free(*stack);
-		*stack = current;
-	}
-	*stack = NULL;
-}
+void	push(t_list **a, t_list **b);
+void	rotate(t_list **a);
 
-int	error_handle(t_list **stack)
-{
-	ft_lstclear(stack);
-	write(1, "Error\n", 6);
-	exit(1);
-}
+#endif

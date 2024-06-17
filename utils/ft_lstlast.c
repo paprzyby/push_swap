@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 09:45:07 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/17 09:48:12 by paprzyby         ###   ########.fr       */
+/*   Created: 2024/03/18 08:55:02 by paprzyby          #+#    #+#             */
+/*   Updated: 2024/06/17 09:51:23 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined(PUSH_SWAP_H)
-# define PUSH_SWAP_H
+#include "utils.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "./utils/utils.h"
-# include "./operations/operations.h"
-
-#endif
+t_list	*ft_lstlast(t_list *lst)
+{
+	if (!lst)
+		return (NULL);
+	while (lst -> next)
+		lst = lst -> next;
+	return (lst);
+}

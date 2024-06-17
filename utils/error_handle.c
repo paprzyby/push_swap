@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   error_handle.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/13 11:36:02 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/13 12:12:30 by paprzyby         ###   ########.fr       */
+/*   Created: 2024/06/12 14:32:11 by paprzyby          #+#    #+#             */
+/*   Updated: 2024/06/17 09:51:20 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "utils.h"
 
-void	push(t_list **a, t_list **b)
+void	ft_lstclear(t_list **stack)
 {
-	t_list	*node_to_push;
+	t_list	*current;
 
-	if (!*a)
+	if (!stack)
 		return ;
-	node_to_push = *a;
-	*a = (*a)->next;
-	if (*a)
-		(*a)->prev = NULL;
-	node_to_push->prev = NULL;
-	if (!*b)
+	while (*stack)
 	{
-		*b = node_to_push;
-		node_to_push->next = NULL;
+		current = (*stack)->next;
+		free(*stack);
+		*stack = current;
 	}
-	else
-	{
-		node_to_push->next = *b;
-		node_to_push->next->prev = node_to_push;
-		*b = node_to_push;
-	}
+	*stack = NULL;
+}
+
+int	error_handle(t_list **stack)
+{
+	ft_lstclear(stack);
+	write(1, "Error\n", 6);
+	exit(1);
 }

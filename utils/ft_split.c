@@ -6,11 +6,11 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 14:49:39 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 10:15:51 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/17 09:51:25 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "utils.h"
 
 static size_t	word_count(char const *s, char c)
 {

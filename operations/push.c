@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/18 08:55:02 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/12 14:29:47 by paprzyby         ###   ########.fr       */
+/*   Created: 2024/06/13 11:36:02 by paprzyby          #+#    #+#             */
+/*   Updated: 2024/06/17 09:51:34 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "operations.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	push(t_list **a, t_list **b)
 {
-	if (!lst)
-		return (NULL);
-	while (lst -> next)
-		lst = lst -> next;
-	return (lst);
+	t_list	*node_to_push;
+
+	if (!*a)
+		return ;
+	node_to_push = *a;
+	*a = (*a)->next;
+	if (*a)
+		(*a)->prev = NULL;
+	node_to_push->prev = NULL;
+	if (!*b)
+	{
+		*b = node_to_push;
+		node_to_push->next = NULL;
+	}
+	else
+	{
+		node_to_push->next = *b;
+		node_to_push->next->prev = node_to_push;
+		*b = node_to_push;
+	}
 }

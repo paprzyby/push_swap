@@ -6,11 +6,11 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 13:36:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/13 13:53:58 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/17 09:51:39 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "operations.h"
 
 void	rotate(t_list **a)
 {
