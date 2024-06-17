@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.h                                       :+:      :+:    :+:   */
+/*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 09:47:15 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/17 13:30:18 by paprzyby         ###   ########.fr       */
+/*   Created: 2024/06/17 13:29:52 by paprzyby          #+#    #+#             */
+/*   Updated: 2024/06/17 13:50:34 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined(OPERATIONS_H)
-# define OPERATIONS_H
+#include "operations.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "../utils/utils.h"
+void	rev_rotate(t_list **a)
+{
+	t_list	*last_node;
 
-void	push(t_list **a, t_list **b);
-void	rotate(t_list **a);
-void	swap(t_list **a);
-void	rev_rotate(t_list **a);
-
-#endif
+	if (!*a)
+		return ;
+	last_node = ft_lstlast(*a);
+	(*a)->prev = last_node;
+	last_node->prev->next = NULL;
+	last_node->prev = NULL;
+	last_node->next = *a;
+	*a = last_node;
+}
