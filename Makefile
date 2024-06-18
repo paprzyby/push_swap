@@ -6,7 +6,7 @@
 #    By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 16:42:03 by paprzyby          #+#    #+#              #
-#    Updated: 2024/06/18 09:51:21 by paprzyby         ###   ########.fr        #
+#    Updated: 2024/06/18 10:19:29 by paprzyby         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SOURCE		=	push_swap.c \
 				utils/ft_lstlast.c utils/ft_split.c \
 				operations/push.c operations/rotate.c \
 				operations/swap.c operations/rev_rotate.c \
-				small_sort.c sort.c
+				small_sort.c sort.c set_target_node.c
 
 OBJECTS		=	$(SOURCE:.c=.o)
 

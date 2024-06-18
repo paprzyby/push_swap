@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   set_target_node.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 09:45:07 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/18 10:21:20 by paprzyby         ###   ########.fr       */
+/*   Created: 2024/06/18 10:18:45 by paprzyby          #+#    #+#             */
+/*   Updated: 2024/06/18 10:21:10 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if !defined(PUSH_SWAP_H)
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "./utils/utils.h"
-# include "./operations/operations.h"
+void	set_target_node(t_list **a, t_list **b)
+{
 
-void	small_sort(t_list **a);
-void	sort(t_list **a, t_list **b);
-void	set_target_node(t_list **a, t_list **b);
-
-#endif
+}
