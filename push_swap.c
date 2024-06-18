@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/18 08:34:56 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/18 09:42:09 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	b = NULL;
 	if (argc == 1)
 		return (1);
-	else if (argc == 2)
+	if (argc == 2)
 	{
 		argv = ft_split(argv[1], ' ');
 		if (!argv[1])
@@ -35,13 +35,28 @@ int	main(int argc, char **argv)
 	else
 		stack_init(&a, argv + 1);
 	if (argc <= 4)
+	{
 		small_sort(&a);
-	//rev_rotate(&a);
+		printf("Stack 'a':\n");
+		while (a)
+		{
+			printf("%d\n", a->value);
+			a = a->next;
+		}
+		return (0);
+	}
+	sort(&a, &b);
 	printf("Stack 'a':\n");
 	while (a)
 	{
 		printf("%d\n", a->value);
 		a = a->next;
+	}
+	printf("Stack 'b':\n");
+	while (b)
+	{
+		printf("%d\n", b->value);
+		b = b->next;
 	}
 	return (0);
 }
