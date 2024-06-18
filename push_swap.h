@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:45:07 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/18 08:29:09 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/18 09:51:38 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
 # include "./operations/operations.h"
 
 void	small_sort(t_list **a);
+void	sort(t_list **a, t_list **b);
 
 #endif

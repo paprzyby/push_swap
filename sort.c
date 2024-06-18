@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 09:42:31 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/18 09:43:00 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/18 09:53:36 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,8 @@
 
 void	sort(t_list **a, t_list **b)
 {
-	
+	while ((*a)->next->next->next != NULL)
+		push(a, b);
+	small_sort(a);
+	small_sort(b);
 }
