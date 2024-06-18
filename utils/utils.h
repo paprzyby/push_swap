@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:28:53 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/17 13:56:47 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/18 08:29:01 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,5 @@ int		error_handle(t_list **stack);
 char	**ft_split(char const *s, char c);
 void	ft_lstclear(t_list **lst);
 t_list	*ft_lstlast(t_list *lst);
-void	small_sort(t_list **a);
 
 #endif
