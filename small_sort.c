@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 13:55:58 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/18 09:17:42 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/25 14:42:06 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,20 @@ void	small_sort(t_list **a)
 		third = (*a)->next->next->value;
 		if (first > second && first > third)
 		{
-			rotate(a);
+			ra(a);
 			if (second > third)
-				swap(a);
+				sa(a);
 		}
 		else if (first > second && first < third)
-			swap(a);
+			sa(a);
 		else if (third < second && third < first)
-			rev_rotate(a);
+			rra(a);
 		else if (second > first && second > third && first < third)
 		{
-			swap(a);
-			rotate(a);
+			sa(a);
+			ra(a);
 		}
 	}
 	else if (first > second)
-		swap(a);
+		sa(a);
 }

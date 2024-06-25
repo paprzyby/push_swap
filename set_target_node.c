@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 10:18:45 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/18 10:21:10 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/25 11:46:52 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	set_target_node(t_list **a, t_list **b)
 {
-
+	(void)a;
+	(void)b;
+	exit(1);
 }

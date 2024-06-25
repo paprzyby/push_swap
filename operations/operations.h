@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:47:15 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/17 13:30:18 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/25 14:41:03 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,13 @@
 # include <limits.h>
 # include "../utils/utils.h"
 
-void	push(t_list **a, t_list **b);
-void	rotate(t_list **a);
-void	swap(t_list **a);
-void	rev_rotate(t_list **a);
+void	sa(t_list **a);
+void	sb(t_list **a);
+void	pa(t_list **a, t_list **b);
+void	pb(t_list **a, t_list **b);
+void	ra(t_list **a);
+void	rb(t_list **a);
+void	rra(t_list **a);
+void	rrb(t_list **a);
 
 #endif
