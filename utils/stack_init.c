@@ -6,11 +6,26 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/17 09:51:11 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/25 17:58:10 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
+
+int	check_for_int(char *str)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] >= '0' && str[i] <= '9')
+			i++;
+		else
+			return (1);
+	}
+	return (0);
+}
 
 long	ft_atol(char *str, t_list **stack)
 {
@@ -78,6 +93,8 @@ void	stack_init(t_list **stack, char **argv)
 
 	while (*argv)
 	{
+		if (check_for_int(*argv))
+			error_handle(stack);
 		num = ft_atol(*argv, stack);
 		if (num > INT_MAX || num < INT_MIN)
 			error_handle(stack);
