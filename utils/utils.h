@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:28:53 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/25 17:55:37 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/26 15:44:13 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ typedef struct s_list
 }					t_list;
 
 void	stack_init(t_list **a, char **argv);
-long	ft_atol(char *str, t_list **stack);
+long	ft_atol(char *str);
 int		check_for_repeat(t_list *stack, int num);
 void	create_node(t_list **stack, int num);
 t_list	*find_last_node(t_list *stack);

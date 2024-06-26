@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/25 17:58:10 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/26 15:43:46 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	check_for_int(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= '0' && str[i] <= '9')
+		if ((str[i] >= '0' && str[i] <= '9') || str[i] == '-')
 			i++;
 		else
 			return (1);
@@ -27,15 +27,13 @@ int	check_for_int(char *str)
 	return (0);
 }
 
-long	ft_atol(char *str, t_list **stack)
+long	ft_atol(char *str)
 {
 	int		symbol;
 	long	number;
 
 	symbol = 1;
 	number = 0;
-	if (*str != '-' && (*str < '0' || *str > '9'))
-		error_handle(stack);
 	if (*str == '-')
 	{
 		symbol = symbol * -1;
@@ -95,7 +93,7 @@ void	stack_init(t_list **stack, char **argv)
 	{
 		if (check_for_int(*argv))
 			error_handle(stack);
-		num = ft_atol(*argv, stack);
+		num = ft_atol(*argv);
 		if (num > INT_MAX || num < INT_MIN)
 			error_handle(stack);
 		if (check_for_repeat(*stack, (int)num))

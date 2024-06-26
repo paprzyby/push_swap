@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/25 15:04:25 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/26 15:15:45 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,13 @@ int	main(int argc, char **argv)
 		small_sort(&a);
 	else
 		sort(&a, &b);
-	//printf("Stack 'a':\n");
-	//while (a)
-	//{
-	//	printf("%d\n", a->value);
-	//	a = a->next;
-	//}
-	//printf("Stack 'b':\n");
+	printf("Stack 'a':\n");
+	while (a)
+	{
+		printf("%d\n", a->value);
+		a = a->next;
+	}
+	//printf("\nStack 'b':\n");
 	//while (b)
 	//{
 	//	printf("%d\n", b->value);
