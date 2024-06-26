@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/26 15:43:46 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/26 15:52:13 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,24 @@
 int	check_for_int(char *str)
 {
 	unsigned int	i;
+	unsigned int	minus;
 
 	i = 0;
+	minus = 0;
 	while (str[i])
 	{
-		if ((str[i] >= '0' && str[i] <= '9') || str[i] == '-')
+		if (str[i] == '-')
+		{
+			minus++;
+			i++;
+		}
+		else if (str[i] >= '0' && str[i] <= '9')
 			i++;
 		else
 			return (1);
 	}
+	if (minus > 1)
+		return (1);
 	return (0);
 }
 
