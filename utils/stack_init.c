@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/26 15:52:13 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/27 16:33:44 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	check_for_int(char *str)
 
 	i = 0;
 	minus = 0;
+	if (str[i] == '\0')
+		return (1);
 	while (str[i])
 	{
 		if (str[i] == '-')

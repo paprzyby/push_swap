@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 13:55:58 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/26 16:04:36 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/27 16:21:31 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	three_nodes(t_list **a, int first, int second)
 		sa(a);
 		ra(a);
 	}
-	else
-		error_handle(a);
+	//else
+	//	exit(1);
 }
 
 void	small_sort(t_list **a)

@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/26 16:02:22 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/06/27 14:12:16 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ int	main(int argc, char **argv)
 		printf("%d\n", a->value);
 		a = a->next;
 	}
-	//printf("\nStack 'b':\n");
-	//while (b)
-	//{
-	//	printf("%d\n", b->value);
-	//	b = b->next;
-	//}
+	printf("Stack 'b':\n");
+	while (b)
+	{
+		printf("%d\n", b->value);
+		b = b->next;
+	}
 	return (0);
 }
