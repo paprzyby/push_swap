@@ -6,7 +6,7 @@
 #    By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 16:42:03 by paprzyby          #+#    #+#              #
-#    Updated: 2024/07/01 15:06:08 by paprzyby         ###   ########.fr        #
+#    Updated: 2024/07/01 15:19:30 by paprzyby         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SOURCE		=	push_swap.c main.c\
 				utils/ft_lstlast.c utils/ft_split.c \
 				operations/push.c operations/rotate.c \
 				operations/swap.c operations/rev_rotate.c \
-				utils/ft_lstsize.c utils/ft_lstclear.c
+				utils/ft_lstsize.c utils/ft_lstclear.c \
+				sort.c
 
 OBJECTS		=	$(SOURCE:.c=.o)
 
