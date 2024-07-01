@@ -5,50 +5,55 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/27 14:12:16 by paprzyby         ###   ########.fr       */
+/*   Created: 2024/06/18 09:42:31 by paprzyby          #+#    #+#             */
+/*   Updated: 2024/07/01 15:05:00 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
-int	main(int argc, char **argv)
+void	set_target_node(t_list *a, t_list *b, t_list *smallest)
 {
-	t_list	*a;
-	t_list	*b;
+	t_list	*head;
+	t_list	*target_node;
+	long	best_index;
 
-	a = NULL;
-	b = NULL;
-	if (argc == 1)
-		return (1);
-	else if (argc == 2)
-	{
-		argv = ft_split(argv[1], ' ');
-		if (!argv[1])
-		{
-			free(argv[0]);
-			return (1);
-		}
-		stack_init(&a, argv);
-	}
-	else
-		stack_init(&a, argv + 1);
-	if (argc <= 4)
-		small_sort(&a);
-	else
-		sort(&a, &b);
-	printf("Stack 'a':\n");
-	while (a)
-	{
-		printf("%d\n", a->value);
-		a = a->next;
-	}
-	printf("Stack 'b':\n");
+	head = a;
+	best_index = LONG_MAX;
 	while (b)
 	{
-		printf("%d\n", b->value);
+		a = head;
+		best_index = LONG_MAX;
+		while (a)
+		{
+			if (a->value > b->value
+				&& a->value < best_index)
+			{
+				best_index = a->value;
+				target_node = a;
+			}
+			a = a->next;
+		}
+		if (best_index == LONG_MAX)
+			b->target_node = smallest;
+		else
+			b->target_node = target_node;
 		b = b->next;
 	}
-	return (0);
+}
+
+//void	set_price(t_list *a, t_list *b)
+//{
+
+//}
+
+void	push_swap(t_list **a, t_list **b)
+{
+	t_list	*smallest;
+
+	while ((*a)->next->next->next != NULL)
+		pa(a, b);
+	three_nodes(a);
+	smallest = (*a);
+	set_target_node(*a, *b, smallest);
 }

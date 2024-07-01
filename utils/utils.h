@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:28:53 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/01 13:12:04 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/01 14:50:11 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ void		create_node(t_list **stack, int num);
 t_list		*find_last_node(t_list *stack);
 int			error_handle(t_list **stack);
 char		**ft_split(char const *s, char c);
-void		ft_lstclear(t_list **lst);
+void		ft_lstclear(t_list **stack);
 t_list		*ft_lstlast(t_list *lst);
+int			ft_lstsize(t_list *lst);
 int			check_for_int(char *str);
-static void	set_target_node(t_list *a, t_list *b, t_list *smallest);
+void	set_target_node(t_list *a, t_list *b, t_list *smallest);
 
 #endif
