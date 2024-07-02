@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:45:07 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/02 09:32:20 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/02 09:57:08 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ void	sort(t_list **a, t_list **b);
 void	four_nodes(t_list **a, t_list **b);
 void	five_nodes(t_list **a, t_list **b);
 void	set_target_node(t_list *a, t_list *b, t_list *smallest);
+void	set_node_position(t_list *stack);
 
 #endif
