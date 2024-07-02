@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 09:38:56 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/02 09:57:50 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/02 15:06:16 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,21 @@ void	set_target_node(t_list *a, t_list *b, t_list *smallest)
 
 void	set_node_position(t_list *stack)
 {
-	
+	int	center;
+	int	i;
+
+	if (!stack)
+		return ;
+	i = 0;
+	center = ft_lstsize(stack) / 2;
+	while (stack)
+	{
+		stack->current_position = i;
+		if (i > center)
+			stack->top_bot = false;
+		else
+			stack->top_bot = true;
+		i++;
+		stack = stack->next;
+	}
 }

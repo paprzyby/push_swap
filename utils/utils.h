@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:28:53 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/02 09:56:59 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/02 15:05:35 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 typedef struct s_list
 {
 	int				value;
+	int				current_position;
 	bool			top_bot;
 	struct s_list	*next;
 	struct s_list	*prev;
