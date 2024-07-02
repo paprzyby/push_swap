@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 09:42:31 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/01 15:05:00 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/02 09:29:17 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,6 @@ void	set_target_node(t_list *a, t_list *b, t_list *smallest)
 		b = b->next;
 	}
 }
-
-//void	set_price(t_list *a, t_list *b)
-//{
-
-//}
 
 void	push_swap(t_list **a, t_list **b)
 {
