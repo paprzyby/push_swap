@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:47:15 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/06/25 14:41:03 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/02 09:13:46 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,19 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+# include <stdbool.h>
 # include "../utils/utils.h"
 
-void	sa(t_list **a);
-void	sb(t_list **a);
-void	pa(t_list **a, t_list **b);
+void	ss(t_list **a, t_list **b, bool check);
+void	sa(t_list **a, bool check);
+void	sb(t_list **b, bool check);
 void	pb(t_list **a, t_list **b);
-void	ra(t_list **a);
-void	rb(t_list **a);
-void	rra(t_list **a);
-void	rrb(t_list **a);
+void	pa(t_list **a, t_list **b);
+void	rr(t_list **a, t_list **b, bool check);
+void	ra(t_list **a, bool check);
+void	rb(t_list **a, bool check);
+void	rrr(t_list **a, t_list **b, bool check);
+void	rra(t_list **a, bool check);
+void	rrb(t_list **a, bool check);
 
 #endif

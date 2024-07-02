@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:13:22 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/01 15:31:19 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/02 09:14:17 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	five_nodes(t_list **a, t_list **b)
 {
-	pa(a, b);
-	pa(a, b);
+	pb(a, b);
+	pb(a, b);
 	three_nodes(a);
 }
 
 void	four_nodes(t_list **a, t_list **b)
 {
-	pa(a, b);
+	pb(a, b);
 	three_nodes(a);
 }
 
@@ -36,18 +36,18 @@ void	three_nodes(t_list **a)
 	third = (*a)->next->next->value;
 	if (first > second && first > third)
 	{
-		ra(a);
+		ra(a, false);
 		if (second > third)
-			sa(a);
+			sa(a, false);
 	}
 	else if (first > second && first < third)
-		sa(a);
+		sa(a, false);
 	else if (third < second && third < first)
-		rra(a);
+		rra(a, false);
 	else if (second > first && second > third && first < third)
 	{
-		sa(a);
-		ra(a);
+		sa(a, false);
+		ra(a, false);
 	}
 }
 
@@ -59,7 +59,7 @@ void	two_nodes(t_list **a)
 	first = (*a)->value;
 	second = (*a)->next->value;
 	if (first > second)
-		sa(a);
+		sa(a, false);
 }
 
 void	sort(t_list **a, t_list **b)
