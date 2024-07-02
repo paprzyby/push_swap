@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 09:38:56 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/02 15:06:16 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/02 16:18:57 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,24 @@ void	set_node_position(t_list *stack)
 			stack->top_bot = true;
 		i++;
 		stack = stack->next;
+	}
+}
+
+void	set_the_price(t_list *a, t_list *b)
+{
+	int	len_a;
+	int	len_b;
+
+	len_a = ft_lstsize(a);
+	len_b = ft_lstsize(b);
+	while (b)
+	{
+		if (!(b->top_bot))
+			b->push_price = len_b - b->current_position;
+		if (b->target_node->top_bot)
+			b->push_price += b->target_node->current_position;
+		else
+			b->push_price += len_a - (b->target_node->current_position);
+		b = b->next;
 	}
 }
