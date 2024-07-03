@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 09:38:56 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/02 16:18:57 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/03 10:53:55 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,24 @@ void	set_the_price(t_list *a, t_list *b)
 			b->push_price += len_a - (b->target_node->current_position);
 		b = b->next;
 	}
+}
+
+void	set_the_cheapest(t_list *b)
+{
+	long	best_price;
+	t_list	*best_node;
+
+	if (!b)
+		return ;
+	best_price = LONG_MAX;
+	while (b)
+	{
+		if (b->push_price < best_price)
+		{
+			best_price = b->push_price;
+			best_node = b;
+		}
+		b = b->next;
+	}
+	best_node->cheapest = true;
 }
