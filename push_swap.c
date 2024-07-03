@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 09:42:31 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/02 15:24:35 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/03 10:56:31 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,10 @@ void	push_swap(t_list **a, t_list **b)
 	smallest = (*a);
 	while (b)
 	{
-		set_node_position(a);
-		set_node_position(b);
+		set_node_position(*a);
+		set_node_position(*b);
 		set_target_node(*a, *b, smallest);
-		set_the_price(a, b);
+		set_the_price(*a, *b);
+		set_the_cheapest(*b);
 	}
 }

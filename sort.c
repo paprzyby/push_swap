@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:13:22 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/02 09:14:17 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/03 11:34:10 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,23 @@ void	five_nodes(t_list **a, t_list **b)
 
 void	four_nodes(t_list **a, t_list **b)
 {
+	int	num;
+
 	pb(a, b);
 	three_nodes(a);
+	pa(a, b);
+	num = (*a)->value;
+	if (num > (*a)->next->next->next->value)
+		ra(a, false);
+	else if (num > (*a)->next->next->value)
+	{
+		ra(a, false);
+		pb(a, b);
+		three_nodes(a);
+		pa(a, b);
+	}
+	else if (num > (*a)->next->value)
+		sa(a, false);
 }
 
 void	three_nodes(t_list **a)
