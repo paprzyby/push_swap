@@ -6,7 +6,7 @@
 #    By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 16:42:03 by paprzyby          #+#    #+#              #
-#    Updated: 2024/07/02 09:58:18 by paprzyby         ###   ########.fr        #
+#    Updated: 2024/07/08 10:17:43 by paprzyby         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,9 @@ RM			=	rm -f
 FLAGS		=	-Wall -Wextra -Werror
 
 all:			$(NAME)
+	@echo ""
+	@echo "$(NAME) built successfully!"
+	@echo ""
 
 $(NAME):		$(OBJECTS)
 
@@ -39,7 +42,9 @@ clean:
 
 fclean:	clean
 	@rm -f $(NAME)
-
+	@echo ""
+	@echo "All files cleaned successfully!"
+	@echo ""
 re:				fclean all
 
 .PHONY:			all clean fclean re
