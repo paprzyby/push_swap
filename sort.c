@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:13:22 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/19 19:12:05 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/19 19:41:17 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	check_if_sorted(t_list *a)
 		a = a->next;
 	}
 	ft_lstclear(&a);
+	write(1, "OK\n", 3);
 	exit(1);
 }
 
