@@ -1,6 +1,6 @@
 {
 	"files.associations": {
-		"stdbool.h": "c",
-		"unistd.h": "c"
+		"utils.h": "c",
+		"operations.h": "c"
 	}
 }

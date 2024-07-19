@@ -6,26 +6,11 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:13:22 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/03 13:42:29 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/19 15:58:12 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	five_nodes(t_list **a, t_list **b)
-{
-	int	first;
-	int	second;
-
-	pb(a, b);
-	pb(a, b);
-	three_nodes(a);
-	two_nodes(b);
-	first = (*a)->value;
-	second = (*a)->next->value;
-	pa(a, b);
-	four_nodes(a, b);
-}
 
 void	four_nodes(t_list **a, t_list **b)
 {
@@ -96,8 +81,6 @@ void	sort(t_list **a, t_list **b)
 		three_nodes(a);
 	else if (stack_size == 4)
 		four_nodes(a, b);
-	else if (stack_size == 5)
-		five_nodes(a, b);
 	else
 		push_swap(a, b);
 }

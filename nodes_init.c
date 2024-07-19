@@ -6,13 +6,33 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 09:38:56 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/03 10:53:55 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/11 17:32:10 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	set_target_node(t_list *a, t_list *b, t_list *smallest)
+t_list	*find_the_smallest(t_list *stack)
+{
+	long			smallest;
+	t_list	*smallest_node;
+
+	if (!stack)
+		return (NULL);
+	smallest = LONG_MAX;
+	while (stack)
+	{
+		if (stack->value < smallest)
+		{
+			smallest = stack->value;
+			smallest_node = stack;
+		}
+		stack = stack->next;
+	}
+	return (smallest_node);
+}
+
+void	set_target_node(t_list *a, t_list *b)
 {
 	t_list	*head;
 	t_list	*target_node;
@@ -35,7 +55,7 @@ void	set_target_node(t_list *a, t_list *b, t_list *smallest)
 			a = a->next;
 		}
 		if (best_index == LONG_MAX)
-			b->target_node = smallest;
+			b->target_node = find_the_smallest(a);
 		else
 			b->target_node = target_node;
 		b = b->next;
@@ -72,8 +92,9 @@ void	set_the_price(t_list *a, t_list *b)
 	len_b = ft_lstsize(b);
 	while (b)
 	{
+		b->push_price = b->current_position;
 		if (!(b->top_bot))
-			b->push_price = len_b - b->current_position;
+			b->push_price = len_b - (b->current_position);
 		if (b->target_node->top_bot)
 			b->push_price += b->target_node->current_position;
 		else
