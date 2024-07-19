@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/01 15:13:22 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/19 15:58:12 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/19 19:12:05 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,24 +59,26 @@ void	three_nodes(t_list **a)
 	}
 }
 
-void	two_nodes(t_list **a)
+void	check_if_sorted(t_list *a)
 {
-	int	first;
-	int	second;
-
-	first = (*a)->value;
-	second = (*a)->next->value;
-	if (first > second)
-		sa(a, false);
+	while (a && a->next)
+	{
+		if (a->value > a->next->value)
+			return ;
+		a = a->next;
+	}
+	ft_lstclear(&a);
+	exit(1);
 }
 
 void	sort(t_list **a, t_list **b)
 {
 	int	stack_size;
 
+	check_if_sorted(a);
 	stack_size = ft_lstsize(*a);
 	if (stack_size == 2)
-		two_nodes(a);
+		sa(a, false);
 	else if (stack_size == 3)
 		three_nodes(a);
 	else if (stack_size == 4)

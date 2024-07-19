@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:45:07 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/11 17:24:56 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/19 19:12:44 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # include <stdio.h>
 
 void	stack_init(t_list **a, char **argv);
-void	two_nodes(t_list **a);
 void	push_swap(t_list **a, t_list **b);
 void	three_nodes(t_list **a);
 void	check_if_sorted(t_list *a);

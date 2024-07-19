@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/02 09:32:30 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/19 19:31:01 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,7 @@ void	create_node(t_list **stack, int num)
 void	stack_init(t_list **stack, char **argv)
 {
 	long	num;
+	int		n;
 
 	while (*argv)
 	{
@@ -107,19 +108,10 @@ void	stack_init(t_list **stack, char **argv)
 		num = ft_atol(*argv);
 		if (num > INT_MAX || num < INT_MIN)
 			error_handle(stack);
-		if (check_for_repeat(*stack, (int)num))
+		n = num;
+		if (check_for_repeat(*stack, n))
 			error_handle(stack);
-		create_node(stack, (int)num);
+		create_node(stack, n);
 		argv++;
 	}
 }
-
-//allocated memory:
-//- ft_split (**argv)
-//- t_list **a(nodes)
-
-//to do:
-//memory for the list is not
-//properly freed (whats inside the node)!!!
-//replace some returns with exit
-//free everything if an error appeard

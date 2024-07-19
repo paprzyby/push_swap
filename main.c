@@ -6,23 +6,11 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/19 19:02:25 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/19 19:11:53 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	check_if_sorted(t_list *a)
-{
-	while (a && a->next)
-	{
-		if (a->value > a->next->value)
-			return ;
-		a = a->next;
-	}
-	ft_lstclear(&a);
-	exit(1);
-}
 
 int	main(int argc, char **argv)
 {
@@ -42,7 +30,6 @@ int	main(int argc, char **argv)
 	}
 	else
 		stack_init(&a, argv + 1);
-	check_if_sorted(a);
 	sort(&a, &b);
 	printf("Stack 'a':\n");
 	while (a)
