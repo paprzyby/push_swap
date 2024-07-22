@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/19 19:31:01 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/22 08:13:40 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,35 +71,11 @@ int	check_for_repeat(t_list *stack, int num)
 	return (0);
 }
 
-void	create_node(t_list **stack, int num)
-{
-	t_list	*new_node;
-	t_list	*last_node;
-
-	if (!stack)
-		return ;
-	new_node = malloc(sizeof(t_list));
-	if (!new_node)
-		error_handle(stack);
-	new_node->value = num;
-	new_node->next = NULL;
-	if (!*stack)
-	{
-		*stack = new_node;
-		new_node->prev = NULL;
-	}
-	else
-	{
-		last_node = ft_lstlast(*stack);
-		last_node->next = new_node;
-		new_node->prev = last_node;
-	}
-}
-
 void	stack_init(t_list **stack, char **argv)
 {
 	long	num;
 	int		n;
+	t_list	*new_node;
 
 	while (*argv)
 	{
@@ -111,7 +87,12 @@ void	stack_init(t_list **stack, char **argv)
 		n = num;
 		if (check_for_repeat(*stack, n))
 			error_handle(stack);
-		create_node(stack, n);
+		new_node = malloc(sizeof(t_list));
+		if (!new_node)
+			error_handle(stack);
+		new_node->value = num;
+		new_node->next = NULL;
+		ft_lstadd_back(stack, new_node);
 		argv++;
 	}
 }

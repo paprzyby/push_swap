@@ -6,18 +6,18 @@
 #    By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 16:42:03 by paprzyby          #+#    #+#              #
-#    Updated: 2024/07/19 15:56:44 by paprzyby         ###   ########.fr        #
+#    Updated: 2024/07/22 08:10:43 by paprzyby         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	push_swap
 
-SOURCE		=	push_swap.c main.c stack_init.c sort.c \
+SOURCE		=	push_swap.c main.c stack_init.c \
 				utils/error_handle.c utils/ft_lstlast.c \
 				utils/ft_split.c utils/ft_lstsize.c utils/ft_lstclear.c \
 				operations/push.c operations/rotate.c \
 				operations/swap.c operations/rev_rotate.c \
-				nodes_init.c
+				nodes_init.c utils/ft_lstadd_back_bonus.c
 
 OBJECTS		=	$(SOURCE:.c=.o)
 

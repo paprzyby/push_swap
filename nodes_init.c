@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 09:38:56 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/11 17:32:10 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/20 20:53:39 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,25 +34,23 @@ t_list	*find_the_smallest(t_list *stack)
 
 void	set_target_node(t_list *a, t_list *b)
 {
-	t_list	*head;
+	t_list	*curr_a;
 	t_list	*target_node;
 	long	best_index;
 
-	head = a;
-	best_index = LONG_MAX;
 	while (b)
 	{
-		a = head;
+		curr_a = a;
 		best_index = LONG_MAX;
-		while (a)
+		while (curr_a)
 		{
-			if (a->value > b->value
-				&& a->value < best_index)
+			if (curr_a->value > b->value
+				&& curr_a->value < best_index)
 			{
-				best_index = a->value;
-				target_node = a;
+				best_index = curr_a->value;
+				target_node = curr_a;
 			}
-			a = a->next;
+			curr_a = curr_a->next;
 		}
 		if (best_index == LONG_MAX)
 			b->target_node = find_the_smallest(a);
