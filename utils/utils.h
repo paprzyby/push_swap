@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:28:53 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/22 08:10:15 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/22 08:36:48 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <limits.h>
 # include <stdbool.h>
 
 typedef struct s_list
@@ -30,18 +29,10 @@ typedef struct s_list
 	struct s_list	*target_node;
 }					t_list;
 
-long	ft_atol(char *str);
-int		check_for_repeat(t_list *stack, int num);
-void	create_node(t_list **stack, int num);
-t_list	*find_last_node(t_list *stack);
-int		error_handle(t_list **stack);
 char	**ft_split(char const *s, char c);
 void	ft_lstclear(t_list **stack);
 t_list	*ft_lstlast(t_list *lst);
 int		ft_lstsize(t_list *lst);
-int		check_for_int(char *str);
-void	move_the_nodes(t_list **a, t_list **b);
-void	move_the_nodes(t_list **a, t_list **b);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 
 #endif

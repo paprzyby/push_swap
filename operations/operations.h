@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:47:15 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/02 09:13:46 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/22 08:31:34 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <limits.h>
-# include <stdbool.h>
 # include "../utils/utils.h"
 
 void	ss(t_list **a, t_list **b, bool check);

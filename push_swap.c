@@ -6,24 +6,11 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 09:42:31 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/20 20:41:14 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/22 08:51:01 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-t_list	*return_the_cheapest(t_list *b)
-{
-	if (!b)
-		return (NULL);
-	while (b)
-	{
-		if (b->cheapest)
-			return (b);
-		b = b->next;
-	}
-	return (NULL);
-}
 
 void	finish_rotation(t_list **stack, t_list *top_node, char stack_name)
 {
@@ -62,20 +49,19 @@ void	reverse_rotate_both(t_list **a, t_list **b, t_list *cheapest_node)
 	set_node_position(*b);
 }
 
-void	push_swap_init(t_list *a, t_list *b)
-{
-	set_node_position(a);
-	set_node_position(b);
-	set_target_node(a, b);
-	set_the_price(a, b);
-	set_the_cheapest(b);
-}
-
 void	move_the_nodes(t_list **a, t_list **b)
 {
 	t_list	*cheapest_node;
+	t_list	*head;
 
-	cheapest_node = return_the_cheapest(*b);
+	head = *b;
+	while (head)
+	{
+		if (head->cheapest)
+			break ;
+		head = head->next;
+	}
+	cheapest_node = head;
 	if (cheapest_node == NULL)
 		return;
 	if (cheapest_node->top_bot && cheapest_node->target_node->top_bot)
@@ -96,7 +82,11 @@ void	push_swap(t_list **a, t_list **b)
 	three_nodes(a);
 	while (*b)
 	{
-		push_swap_init(*a, *b);
+		set_node_position(*a);
+		set_node_position(*b);
+		set_target_node(*a, *b);
+		set_the_price(*a, *b);
+		set_the_cheapest(*b);
 		move_the_nodes(a, b);
 	}
 	set_node_position(*a);
