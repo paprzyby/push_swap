@@ -6,12 +6,11 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/23 13:20:45 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/23 16:27:51 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	four_nodes(t_list **a, t_list **b)
 {
@@ -60,15 +59,18 @@ void	three_nodes(t_list **a)
 	}
 }
 
-bool	check_if_sorted(t_list *a)
+bool	check_if_sorted(t_list **a)
 {
-	while (a && a->next)
+	t_list	*head;
+
+	head = *a;
+	while (head && head->next)
 	{
-		if (a->value > a->next->value)
+		if (head->value > head->next->value)
 			return (true);
-		a = a->next;
+		head = head->next;
 	}
-	free(a);
+	ft_lstclear(a);
 	write(1, "OK\n", 3);
 	return (false);
 }
@@ -77,7 +79,7 @@ void	which_sort(t_list **a, t_list **b)
 {
 	int	stack_size;
 
-	if (!check_if_sorted(*a))
+	if (!check_if_sorted(a))
 		exit(1);
 	stack_size = ft_lstsize(*a);
 	if (stack_size == 2)
@@ -87,7 +89,11 @@ void	which_sort(t_list **a, t_list **b)
 	else if (stack_size == 4)
 		four_nodes(a, b);
 	else
+	{
 		push_swap(a, b);
+		ft_lstclear(b);
+	}
+	ft_lstclear(a);
 }
 
 int	main(int argc, char **argv)
@@ -105,12 +111,10 @@ int	main(int argc, char **argv)
 		splitted = ft_split(argv[1], ' ');
 		if (!splitted[1])
 			return (free(splitted), 1);
-		stack_init(&a, argv, true);
+		stack_init(&a, splitted, true);
 	}
 	else
 		stack_init(&a, argv + 1, false);
 	which_sort(&a, &b);
-	//ft_lstclear(&a);
-	//ft_lstclear(&b);
 	return (0);
 }

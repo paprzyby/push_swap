@@ -5,30 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/17 13:29:52 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/23 13:25:45 by paprzyby         ###   ########.fr       */
+/*   Created: 2024/07/23 16:15:18 by paprzyby          #+#    #+#             */
+/*   Updated: 2024/07/23 16:15:48 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
-#include <stdio.h>
+
+t_list *ft_lstsecond_last(t_list *stack)
+{
+	if (!stack || !stack->next)
+		return NULL;
+	while (stack->next->next)
+		stack = stack->next;
+	return stack;
+}
 
 void reverse_rotate(t_list **stack)
 {
-    t_list *last_node;
-    int len;
+	t_list *last_node;
+	t_list *second_last_node;
+	int len;
 
-    len = ft_lstsize(*stack);
-    if (!*stack || len == 1)
-        return;
-    last_node = ft_lstlast(*stack);
-    if (last_node->prev)
-        last_node->prev->next = NULL;
-    if (*stack)
-        (*stack)->prev = last_node;
-    last_node->next = *stack;
-    last_node->prev = NULL;
-    *stack = last_node;
+	if (!stack || !*stack)
+		return;
+	len = ft_lstsize(*stack);
+	if (len == 1)
+		return;
+	last_node = ft_lstlast(*stack);
+	second_last_node = ft_lstsecond_last(*stack);
+	if (second_last_node)
+		second_last_node->next = NULL;
+	if (*stack)
+		(*stack)->prev = last_node;
+	last_node->next = *stack;
+	last_node->prev = NULL;
+	*stack = last_node;
 }
 
 void	rra(t_list **a, bool check)
