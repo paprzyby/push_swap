@@ -6,7 +6,7 @@
 #    By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 16:42:03 by paprzyby          #+#    #+#              #
-#    Updated: 2024/07/22 09:57:14 by paprzyby         ###   ########.fr        #
+#    Updated: 2024/07/23 13:29:33 by paprzyby         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,13 +31,11 @@ CC			=	cc
 
 RM			=	rm -f
 
-FLAGS		=	-Wall -Wextra -Werror
+FLAGS		=	-Wall -Wextra -Werror -g
 
 $(NAME):	$(OBJECTS)
 	$(CC) $(FLAGS) $(OBJECTS) -o $(NAME)
-	@echo ""
 	@echo "$(COLOUR_GREEN)$(NAME) built successfully!$(COLOUR_END)"
-	@echo ""
 
 %.o:			%.c push_swap.h
 				$(CC) $(FLAGS) -c $< -o $@
@@ -46,15 +44,11 @@ all:			$(NAME)
 
 clean:
 	$(RM) -rf $(OBJECTS)
-	@echo ""
 	@echo "$(COLOUR_GREEN)objects removed successfully..$(COLOUR_END)"
-	@echo ""
 
 fclean:	clean
 	$(RM) $(NAME) $(OBJECTS)
-	@echo ""
 	@echo "$(COLOUR_GREEN)$(NAME) cleaned successfully..$(COLOUR_END)"
-	@echo ""
 
 re:				fclean all
 

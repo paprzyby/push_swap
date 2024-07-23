@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/07 17:04:00 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/22 08:13:40 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/22 12:55:47 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	check_for_repeat(t_list *stack, int num)
 	return (0);
 }
 
-void	stack_init(t_list **stack, char **argv)
+void	stack_init(t_list **stack, char **argv, bool check)
 {
 	long	num;
 	int		n;
@@ -80,16 +80,16 @@ void	stack_init(t_list **stack, char **argv)
 	while (*argv)
 	{
 		if (check_for_int(*argv))
-			error_handle(stack);
+			error_handle(stack, argv, check);
 		num = ft_atol(*argv);
 		if (num > INT_MAX || num < INT_MIN)
-			error_handle(stack);
+			error_handle(stack, argv, check);
 		n = num;
 		if (check_for_repeat(*stack, n))
-			error_handle(stack);
+			error_handle(stack, argv, check);
 		new_node = malloc(sizeof(t_list));
 		if (!new_node)
-			error_handle(stack);
+			error_handle(stack, argv, check);
 		new_node->value = num;
 		new_node->next = NULL;
 		ft_lstadd_back(stack, new_node);

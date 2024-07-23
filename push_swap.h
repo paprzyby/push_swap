@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:45:07 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/22 08:51:08 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/22 13:22:36 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include "./utils/utils.h"
 # include "./operations/operations.h"
 
-void	stack_init(t_list **a, char **argv);
 void	push_swap(t_list **a, t_list **b);
 void	three_nodes(t_list **a);
 bool	check_if_sorted(t_list *a);
@@ -40,6 +39,7 @@ t_list	*find_last_node(t_list *stack);
 int		check_for_int(char *str);
 void	move_the_nodes(t_list **a, t_list **b);
 void	move_the_nodes(t_list **a, t_list **b);
-int		error_handle(t_list **stack);
+void	stack_init(t_list **stack, char **argv, bool check);
+void	error_handle(t_list **stack, char **argv, bool check);
 
 #endif

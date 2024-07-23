@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:47:15 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/22 08:31:34 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/22 13:52:00 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include "../utils/utils.h"
 
+void	reverse_rotate(t_list **stack);
 void	ss(t_list **a, t_list **b, bool check);
 void	sa(t_list **a, bool check);
 void	sb(t_list **b, bool check);

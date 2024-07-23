@@ -6,42 +6,43 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 13:29:52 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/02 09:13:19 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/23 13:25:45 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
+#include <stdio.h>
 
-void	rrb(t_list **a, bool check)
+void reverse_rotate(t_list **stack)
 {
-	t_list	*last_node;
+    t_list *last_node;
+    int len;
 
-	if (!*a)
-		return ;
-	last_node = ft_lstlast(*a);
-	(*a)->prev = last_node;
-	last_node->prev->next = NULL;
-	last_node->prev = NULL;
-	last_node->next = *a;
-	*a = last_node;
-	if (!check)
-		write(1, "rrb\n", 4);
+    len = ft_lstsize(*stack);
+    if (!*stack || len == 1)
+        return;
+    last_node = ft_lstlast(*stack);
+    if (last_node->prev)
+        last_node->prev->next = NULL;
+    if (*stack)
+        (*stack)->prev = last_node;
+    last_node->next = *stack;
+    last_node->prev = NULL;
+    *stack = last_node;
 }
 
 void	rra(t_list **a, bool check)
 {
-	t_list	*last_node;
-
-	if (!*a)
-		return ;
-	last_node = ft_lstlast(*a);
-	(*a)->prev = last_node;
-	last_node->prev->next = NULL;
-	last_node->prev = NULL;
-	last_node->next = *a;
-	*a = last_node;
+	reverse_rotate(a);
 	if (!check)
 		write(1, "rra\n", 4);
+}
+
+void	rrb(t_list **b, bool check)
+{
+	reverse_rotate(b);
+	if (!check)
+		write(1, "rrb\n", 4);
 }
 
 void	rrr(t_list **a, t_list **b, bool check)
