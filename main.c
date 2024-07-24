@@ -6,32 +6,11 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/23 16:27:51 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/24 15:50:07 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	four_nodes(t_list **a, t_list **b)
-{
-	int	num;
-
-	pb(a, b);
-	three_nodes(a);
-	pa(a, b);
-	num = (*a)->value;
-	if (num > (*a)->next->next->next->value)
-		ra(a, false);
-	else if (num > (*a)->next->next->value)
-	{
-		ra(a, false);
-		pb(a, b);
-		three_nodes(a);
-		pa(a, b);
-	}
-	else if (num > (*a)->next->value)
-		sa(a, false);
-}
 
 void	three_nodes(t_list **a)
 {
@@ -86,14 +65,26 @@ void	which_sort(t_list **a, t_list **b)
 		sa(a, false);
 	else if (stack_size == 3)
 		three_nodes(a);
-	else if (stack_size == 4)
-		four_nodes(a, b);
 	else
 	{
 		push_swap(a, b);
 		ft_lstclear(b);
 	}
 	ft_lstclear(a);
+}
+
+void	free_the_split(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+	exit(1);
 }
 
 int	main(int argc, char **argv)
@@ -110,7 +101,7 @@ int	main(int argc, char **argv)
 	{
 		splitted = ft_split(argv[1], ' ');
 		if (!splitted[1])
-			return (free(splitted), 1);
+			free_the_split(splitted);
 		stack_init(&a, splitted, true);
 	}
 	else

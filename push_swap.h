@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/17 09:45:07 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/23 16:27:03 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/24 15:42:52 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	push_swap(t_list **a, t_list **b);
 void	three_nodes(t_list **a);
 bool	check_if_sorted(t_list **a);
 void	which_sort(t_list **a, t_list **b);
-void	four_nodes(t_list **a, t_list **b);
 void	set_target_node(t_list *a, t_list *b);
 void	set_node_position(t_list *stack);
 void	set_the_price(t_list *a, t_list *b);
@@ -42,5 +41,6 @@ void	move_the_nodes(t_list **a, t_list **b);
 void	move_the_nodes(t_list **a, t_list **b);
 void	stack_init(t_list **stack, char **argv, bool check);
 void	error_handle(t_list **stack, char **argv, bool check);
+void	free_the_split(char **str);
 
 #endif
