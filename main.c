@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 16:41:38 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/24 15:50:07 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/24 15:53:33 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	which_sort(t_list **a, t_list **b)
 	int	stack_size;
 
 	if (!check_if_sorted(a))
-		exit(1);
+		exit(0);
 	stack_size = ft_lstsize(*a);
 	if (stack_size == 2)
 		sa(a, false);
@@ -89,8 +89,8 @@ void	free_the_split(char **str)
 
 int	main(int argc, char **argv)
 {
-	t_list			*a;
-	t_list			*b;
+	t_list	*a;
+	t_list	*b;
 	char	**splitted;
 
 	a = NULL;

@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 09:38:56 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/20 20:53:39 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/24 15:53:48 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_list	*find_the_smallest(t_list *stack)
 {
-	long			smallest;
+	long	smallest;
 	t_list	*smallest_node;
 
 	if (!stack)

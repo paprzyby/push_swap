@@ -6,7 +6,7 @@
 #    By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 16:42:03 by paprzyby          #+#    #+#              #
-#    Updated: 2024/07/23 19:17:43 by paprzyby         ###   ########.fr        #
+#    Updated: 2024/07/24 15:52:04 by paprzyby         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ COLOUR_END		=	\033[0m
 NAME		=	push_swap
 
 SOURCE		=	push_swap.c main.c stack_init.c \
-				error_handle.c utils/ft_lstlast.c \
+				ft_error.c utils/ft_lstlast.c \
 				utils/ft_split.c utils/ft_lstsize.c utils/ft_lstclear.c \
 				operations/push.c operations/rotate.c \
 				operations/swap.c operations/rev_rotate.c \
