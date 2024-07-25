@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/02 09:38:56 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/24 15:53:48 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/25 15:27:29 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 t_list	*find_the_smallest(t_list *stack)
 {
-	long	smallest;
 	t_list	*smallest_node;
+	long	smallest;
 
 	if (!stack)
 		return (NULL);
+	smallest_node = NULL;
 	smallest = LONG_MAX;
 	while (stack)
 	{
@@ -91,9 +92,9 @@ void	set_the_price(t_list *a, t_list *b)
 	while (b)
 	{
 		b->push_price = b->current_position;
-		if (!(b->top_bot))
+		if (b->top_bot == false)
 			b->push_price = len_b - (b->current_position);
-		if (b->target_node->top_bot)
+		if (b->target_node->top_bot == true)
 			b->push_price += b->target_node->current_position;
 		else
 			b->push_price += len_a - (b->target_node->current_position);
@@ -103,20 +104,29 @@ void	set_the_price(t_list *a, t_list *b)
 
 void	set_the_cheapest(t_list *b)
 {
-	long	best_price;
 	t_list	*best_node;
+	t_list	*current;
+	int		best_price;
 
 	if (!b)
 		return ;
-	best_price = LONG_MAX;
-	while (b)
+	best_node = b;
+	best_price = b->push_price;
+	current = b;
+	while (current)
 	{
-		if (b->push_price < best_price)
+		if (current->push_price < best_price)
 		{
-			best_price = b->push_price;
-			best_node = b;
+			best_price = current->push_price;
+			best_node = current;
 		}
-		b = b->next;
+		current = current->next;
+	}
+	current = b;
+	while (current)
+	{
+		current->cheapest = false;
+		current = current->next;
 	}
 	best_node->cheapest = true;
 }

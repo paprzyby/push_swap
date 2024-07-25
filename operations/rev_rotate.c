@@ -6,32 +6,32 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 16:15:18 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/23 16:15:48 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/25 15:28:32 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
 
-t_list *ft_lstsecond_last(t_list *stack)
+t_list	*ft_lstsecond_last(t_list *stack)
 {
 	if (!stack || !stack->next)
-		return NULL;
+		return (NULL);
 	while (stack->next->next)
 		stack = stack->next;
-	return stack;
+	return (stack);
 }
 
-void reverse_rotate(t_list **stack)
+void	reverse_rotate(t_list **stack)
 {
-	t_list *last_node;
-	t_list *second_last_node;
-	int len;
+	t_list	*last_node;
+	t_list	*second_last_node;
+	int		len;
 
 	if (!stack || !*stack)
-		return;
+		return ;
 	len = ft_lstsize(*stack);
 	if (len == 1)
-		return;
+		return ;
 	last_node = ft_lstlast(*stack);
 	second_last_node = ft_lstsecond_last(*stack);
 	if (second_last_node)
