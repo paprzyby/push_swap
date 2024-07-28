@@ -6,7 +6,7 @@
 /*   By: paprzyby <paprzyby@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 09:42:31 by paprzyby          #+#    #+#             */
-/*   Updated: 2024/07/24 15:54:13 by paprzyby         ###   ########.fr       */
+/*   Updated: 2024/07/28 11:30:35 by paprzyby         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ void	move_the_nodes(t_list **a, t_list **b)
 		head = head->next;
 	}
 	cheapest_node = head;
-	if (cheapest_node == NULL)
-		return ;
 	if (cheapest_node->top_bot && cheapest_node->target_node->top_bot)
 		rotate_both(a, b, cheapest_node);
 	else if (!(cheapest_node->top_bot)
